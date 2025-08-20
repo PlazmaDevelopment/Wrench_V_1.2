@@ -1,0 +1,36 @@
+# Wrench Game Template
+# This file is a basic template to start game development with Wrench.
+
+# Create game window
+window(
+    title="Wrench Game",
+    width=800,
+    height=600,
+    fullscreen=False,
+    vsync=True
+)
+
+# Create game scene
+create_scene("main")
+
+# Game objects
+player = create_object(
+    name="player",
+    position=(400, 300),
+    sprite="player.png",
+    layer="player"
+)
+
+# Input controls
+on_key_press("W", lambda: player.move(0, -5))
+on_key_press("S", lambda: player.move(0, 5))
+on_key_press("A", lambda: player.move(-5, 0))
+on_key_press("D", lambda: player.move(5, 0))
+
+# Game loop
+def update(dt):
+    # Game update logic will go here
+    pass
+
+# Start the game
+run()
